@@ -7,9 +7,8 @@ from django.contrib import messages
 import stripe
 from django.conf import settings
 from django.contrib.auth.views import LoginView
-from django.urls import reverse_lazy
+# from django.urls import reverse_lazy
 from django.contrib.auth.models import User
-from .models import Customer
 from django.contrib.auth import authenticate
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -192,7 +191,7 @@ def checkout(request):
                         line_items=[{
                             'price_data': {
                                  # Change to 'pkr' for Pakistan if needed
-                                'currency': 'pkr', 
+                                'currency': 'usd', 
                                 'product_data': {'name': f'Order {order.id}'},
                                 'unit_amount': int(order.total_price * 100),                            },
                             'quantity': 1,

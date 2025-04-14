@@ -74,3 +74,5 @@ logs/
 *.log
 *.out
 *.err
+# .gitignore
+.env
