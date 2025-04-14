@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}FARFETCH - Home{% endblock %}
+{% block content %}
+    <section class="py-5 bg-light text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Discover Modern Luxury</h1>
+            <p class="lead">Shop the latest trends from top brands worldwide.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Choose a Department</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="{% static 'images/women.jpg' %}" class="card-img-top" alt="Women">
+                        <div class="card-body">
+                            <h5 class="card-title">Shop Women</h5>
+                            <a href="{% url 'category_detail' slug='women' %}" class="btn btn-outline-dark">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="{% static 'images/men.jpg' %}" class="card-img-top" alt="Men">
+                        <div class="card-body">
+                            <h5 class="card-title">Shop Men</h5>
+                            <a href="{% url 'category_detail' slug='men' %}" class="btn btn-outline-dark">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="{% static 'images/kids.jpg' %}" class="card-img-top" alt="Kids">
+                        <div class="card-body">
+                            <h5 class="card-title">Shop Kids</h5>
+                            <a href="{% url 'category_detail' slug='kids' %}" class="btn btn-outline-dark">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="mb-3">Featured Brands</h4>
+                    <div class="accordion" id="featuredBrandsAccordion">
+                        {% for category in categories %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading{{ category.slug }}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ category.slug }}" aria-expanded="false" aria-controls="collapse{{ category.slug }}">
+                                    {{ category.name|upper }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{ category.slug }}" class="accordion-collapse collapse" aria-labelledby="heading{{ category.slug }}" data-bs-parent="#featuredBrandsAccordion">
+                                <div class="accordion-body">
+                                    {% for brand in category.brand_set.all %}
+                                    <p><a href="{% url 'brand_detail' brand.slug %}">{{ brand.name }}</a></p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">Trending Now</h4>
+                    <div class="accordion" id="trendingAccordion">
+                        {% for category in categories %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="trendHeading{{ category.slug }}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendCollapse{{ category.slug }}" aria-expanded="false" aria-controls="trendCollapse{{ category.slug }}">
+                                    {{ category.name|upper }}
+                                </button>
+                            </h2>
+                            <div id="trendCollapse{{ category.slug }}" class="accordion-collapse collapse" aria-labelledby="trendHeading{{ category.slug }}" data-bs-parent="#trendingAccordion">
+                                <div class="accordion-body">
+                                    {% for product in category.product_set.all|slice:":5" %}
+                                    <p><a href="{% url 'product_detail' product.slug %}">{{ product.title }}</a></p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

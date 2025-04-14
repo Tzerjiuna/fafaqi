@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Your Profile - FARFETCH{% endblock %}
+{% block content %}
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Your Profile</h2>
+            {% if user.is_authenticated %}
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p><strong>Username:</strong> {{ user.username }}</p>
+                    <p><strong>Phone:</strong> {{ customer.phone }}</p>
+                    <p><strong>Address:</strong> {{ customer.address }}</p>
+                    <a href="{% url 'edit_profile' %}" class="btn btn-outline-dark">Edit Profile</a>
+                </div>
+            </div>
+            {% else %}
+            <p>Please <a href="{% url 'login' %}">log in</a> to view your profile.</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,27 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.navbar-brand {
+    color: #000 !important;
+    font-weight: 700;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.btn-dark, .btn-outline-dark {
+    border-radius: 0;
+}
+
+.nav-link {
+    color: #595853 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #000 !important;
+}
