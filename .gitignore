@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# If your settings are in a folder called config/
+config/local_settings.py
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Pipenv
+Pipfile.lock
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv
+.env
+.env.*
+
+# gunicorn
+gunicorn.log
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Node modules (if using frontend tools)
+node_modules/
+
+# Logs
+logs/
+*.log
+*.out
+*.err
