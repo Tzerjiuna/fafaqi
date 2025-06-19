@@ -1,77 +1,39 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environment
+cat > .gitignore << 'EOF'
+# 虚拟环境
 venv/
-env/
 .venv/
-ENV/
+env/
 
-# Django stuff:
-*.log
-*.pot
-*.pyc
-db.sqlite3
+# Django 静态资源 & 媒体文件
 media/
+static/
 staticfiles/
-local_settings.py
 
-# If your settings are in a folder called config/
-config/local_settings.py
+# 图片和压缩包
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+*.ico
+*.svg
+*.zip
 
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
+# 数据库
+db.sqlite3
 
-# VS Code
+# VSCode 设置
 .vscode/
 
-# System files
-.DS_Store
-Thumbs.db
+# Python 缓存
+__pycache__/
+*.py[cod]
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Build artifacts
-build/
-dist/
-*.egg-info/
-
-# Pipenv
-Pipfile.lock
-
-# Docker
-*.pid
-*.seed
-*.pid.lock
-
-# dotenv
+# 环境变量
 .env
 .env.*
 
-# gunicorn
-gunicorn.log
-
-# Celery
-celerybeat-schedule
-celerybeat.pid
-
-# Node modules (if using frontend tools)
-node_modules/
-
-# Logs
-logs/
-*.out
-*.err
-
-# Custom project paths
-media/products/
+# 其他忽略项
+*.log
+EOF
