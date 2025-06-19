@@ -1,6 +1,8 @@
+
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
+      overflow-y: scroll;
 }
 
 .navbar-brand {
@@ -24,4 +26,21 @@ body {
 
 .nav-link:hover {
     color: #000 !important;
+}
+
+.image-box {
+    aspect-ratio: 3 / 4;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-box img {
+    transition: transform 0.3s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.02);
 }

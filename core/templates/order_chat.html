@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{% trans "Order Chat - Order" %} #{{ order.id }}{% endblock %}
+{% load i18n %}
+{% block content %}
+<div class="container py-4">
+  <h4 class="mb-4">💬 {% trans "Order Chat - Order" %} #{{ order.id }}</h4>
+
+  <!-- 消息区域 -->
+  <div class="border rounded p-3 mb-4 bg-light"
+       style="min-height: 300px; max-height: 75vh; overflow-y: auto;">
+    {% for msg in messages %}
+      {% if msg.is_system %}
+        <!-- 系统提示 -->
+        <div class="text-center mb-3">
+          <div class="d-inline-block bg-white border rounded px-3 py-2 shadow-sm" style="max-width: 90%;">
+            <div class="small text-muted">{{ msg.message }}</div>
+            <div class="small text-secondary mt-1">{{ msg.timestamp|date:"Y-m-d H:i" }}</div>
+          </div>
+        </div>
+      {% else %}
+        <!-- 用户消息 -->
+        <div class="mb-3 d-flex {% if msg.sender == request.user %}justify-content-end{% else %}justify-content-start{% endif %}">
+          <div class="px-4 py-3 shadow-sm rounded-3"
+               style="max-width: 75%; word-break: break-word; background-color: {% if msg.sender == request.user %}#f8f9fa{% else %}#ffffff{% endif %}; border: 1px solid #dee2e6;">
+            <div>{{ msg.message }}</div>
+            <div class="small text-end text-muted mt-1">{{ msg.timestamp|date:"Y-m-d H:i" }}</div>
+          </div>
+        </div>
+      {% endif %}
+    {% empty %}
+      <p class="text-muted text-center">{% trans "No messages yet." %}</p>
+    {% endfor %}
+  </div>
+
+  <!-- 输入框 -->
+  <form method="post" class="d-flex gap-2">
+    {% csrf_token %}
+    <input type="text" name="message" class="form-control rounded-pill px-3" placeholder="{% trans 'Type your message...' %}" required>
+    <button type="submit" class="btn btn-dark px-4 rounded-pill">{% trans 'Send' %}</button>
+  </form>
+
+  <!-- 返回 -->
+  <div class="mt-4 text-end">
+    <a href="{% url 'cart' %}" class="btn btn-outline-secondary btn-sm">← {% trans 'Back to Cart' %}</a>
+  </div>
+</div>
+{% endblock %}

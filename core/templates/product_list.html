@@ -1,35 +1,39 @@
 {% extends 'base.html' %}
 {% block title %}{{ title }} - FARFETCH{% endblock %}
 {% block content %}
-    <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4">{{ title }}</h2>
-            <div class="row g-4">
-                {% for product in products %}
-                <div class="col-md-3">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.title }}</h5>
-                            <p class="text-muted">{{ product.brand.name }}</p>
-                            <p class="fw-bold">
-                                {% if product.discount_price %}
-                                    <span class="text-decoration-line-through">${{ product.price }}</span>
-                                    ${{ product.discount_price }}
-                                {% else %}
-                                    ${{ product.price }}
-                                {% endif %}
-                            </p>
-                            <a href="{% url 'product_detail' product.slug %}" class="btn btn-outline-dark">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                {% empty %}
-                <div class="col-12">
-                    <p>No products available.</p>
-                </div>
-                {% endfor %}
-            </div>
+
+
+
+
+  <section class="container"><p class="text-muted">Category: {{ category.name }} </p>
+    <h2 class="mb-4">{{ title }}</h2>
+    <div class="row g-4">
+      {% for product in products %}
+      <div class="col-md-3">
+        <div class="card h-80 border-0 shadow-sm">
+          <img src="{{ product.image.url }}" class="card-img-top mx-auto d-block" alt="{{ product.title }}">
+          <div class="card-body text-center text-md-start">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="text-muted">{{ product.brand.name }}</p>
+            <p class="fw-bold">
+              {% if product.discount_price %}
+              <span class="text-decoration-line-through">${{ product.price }}</span>
+              ${{ product.discount_price }}
+              {% else %}
+              ${{ product.price }}
+              {% endif %}
+            </p>
+            <a href="{% url 'product_detail' product.slug %}" class="btn btn-outline-dark">View Details</a>
+          </div>
         </div>
-    </section>
+      </div>
+
+      {% empty %}
+      <div class="col-12">
+        <p>No products available.</p>
+      </div>
+      {% endfor %}
+    </div>
+
+</section>
 {% endblock %}

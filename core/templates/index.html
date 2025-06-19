@@ -1,95 +1,93 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% block title %}FARFETCH - Home{% endblock %}
 {% block content %}
-    <section class="py-5 bg-light text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Discover Modern Luxury</h1>
-            <p class="lead">Shop the latest trends from top brands worldwide.</p>
-        </div>
-    </section>
+<section class="py-5 bg-light text-center" style="min-height: auto;">  <!-- 移除固定高度 -->
+    <div class="container">
+        <h1 class="display-4 fw-bold">{% trans "Discover Modern Luxury" %}</h1>
+        <p class="lead">{% trans "Shop the latest trends from top brands worldwide." %}</p>
+    </div>
+</section>
 
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Choose a Department</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="{% static 'images/women.jpg' %}" class="card-img-top" alt="Women">
-                        <div class="card-body">
-                            <h5 class="card-title">Shop Women</h5>
-                            <a href="{% url 'category_detail' slug='women' %}" class="btn btn-outline-dark">Explore</a>
-                        </div>
+<section class="py-5" style="min-height: auto;">  <!-- 移除固定高度 -->
+    <div class="container">
+        <h2 class="text-center mb-4">{% trans "Choose a Department" %}</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5 col-12">  <!-- 添加 col-12 确保手机端单列显示 -->
+                <div class="hero-banner position-relative"
+                    style="height: 70vh; background: url('https://uxresources.baozun.com/prod/88000173/20250603/93A7E3A5B4D3C17F061A5BD65E621317.jpg') center center/cover no-repeat;">
+                    <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-white">
+                        <h1 class="display-4 fw-bold mb-3" 
+                            style="text-shadow: 0 2px 8px rgba(0,0,0,0.3); letter-spacing: 0.1em;">{% trans "Womenswear" %}</h1>
+                        <a href="{% url 'category_detail' slug='women' %}"
+                            class="btn btn-light btn-lg px-5 rounded-0 fw-bold">{% trans "Shop Now" %}</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="{% static 'images/men.jpg' %}" class="card-img-top" alt="Men">
-                        <div class="card-body">
-                            <h5 class="card-title">Shop Men</h5>
-                            <a href="{% url 'category_detail' slug='men' %}" class="btn btn-outline-dark">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="{% static 'images/kids.jpg' %}" class="card-img-top" alt="Kids">
-                        <div class="card-body">
-                            <h5 class="card-title">Shop Kids</h5>
-                            <a href="{% url 'category_detail' slug='kids' %}" class="btn btn-outline-dark">Explore</a>
-                        </div>
+            </div>
+            
+            <div class="col-md-5 col-12 mt-3 mt-md-0">  <br><!-- 添加 margin-top 在手机端 -->
+                <div class="hero-banner position-relative"
+                    style="height: 70vh; background: url('https://media.gucci.com/dynamic/b3c8/21rNaFesijleVQXBp93aXyK8oE_qUkny4fkeCBq5X3HA3mU3EZuoYxCOsccz15NX3zU9rjkAYsbggNNwiq1kPMGdDSLCrmE80Qp2CWr99MOE5FyKdNvyk+KioX3Tu6ic5eBfqo5tj90umA+ePacQ9SSoYtJTjwAyvtg0BdwnW4o1n+qTGPamVVjM4JidDYlNUdHiVRE5iWMl+NXfaKjwnsc7oNjA8l6xue1NojB9l9EGClFz6heBoTqOQMcJaOFza6J7u2w44f_0DWKDimlsjixCOEyR95gDYhD3ugumrPGsdAe7vTNhZNXTcIqzq3eZSFeAdkLLaw4WTQMsSYPv5luuTucrprr9ZMSv5yo3uE0=/HP_Portrait_Gucci-GG-MONOGRAM-JUNE25-250527000090770003_001_Default.png') center center/cover no-repeat;">
+                    <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-white">
+                        <h1 class="display-4 fw-bold mb-3"
+                            style="text-shadow: 0 2px 8px rgba(0,0,0,0.3); letter-spacing: 0.1em;">{% trans "Menswear" %}</h1>
+                        <a href="{% url 'category_detail' slug='men' %}"
+                            class="btn btn-light btn-lg px-5 rounded-0 fw-bold">{% trans "Shop Now" %}</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h4 class="mb-3">Featured Brands</h4>
-                    <div class="accordion" id="featuredBrandsAccordion">
-                        {% for category in categories %}
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading{{ category.slug }}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ category.slug }}" aria-expanded="false" aria-controls="collapse{{ category.slug }}">
-                                    {{ category.name|upper }}
-                                </button>
-                            </h2>
-                            <div id="collapse{{ category.slug }}" class="accordion-collapse collapse" aria-labelledby="heading{{ category.slug }}" data-bs-parent="#featuredBrandsAccordion">
-                                <div class="accordion-body">
-                                    {% for brand in category.brand_set.all %}
-                                    <p><a href="{% url 'brand_detail' brand.slug %}">{{ brand.name }}</a></p>
-                                    {% endfor %}
-                                </div>
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-12">
+                <h4 class="mb-3 text-center" style="color: #000;">{% trans "Trending Now" %}</h4>
+                <div class="accordion" id="trendingAccordion">
+                    {% for category in categories %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="trendHeading{{ category.slug }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#trendCollapse{{ category.slug }}" aria-expanded="false"
+                                aria-controls="trendCollapse{{ category.slug }}" style="color: #000;">
+                                {{ category.name|upper }}
+                            </button>
+                        </h2>
+                        <div id="trendCollapse{{ category.slug }}" class="accordion-collapse collapse"
+                            aria-labelledby="trendHeading{{ category.slug }}" data-bs-parent="#trendingAccordion">
+                            <div class="accordion-body text-center">
+                                {% for product in category.product_set.all|slice:":5" %}
+                                <p>
+                                    <a href="{% url 'product_detail' product.slug %}" style="color: #000; text-decoration: none;">
+                                        {{ product.title }}
+                                    </a>
+                                </p>
+                                {% endfor %}
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="mb-3">Trending Now</h4>
-                    <div class="accordion" id="trendingAccordion">
-                        {% for category in categories %}
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="trendHeading{{ category.slug }}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trendCollapse{{ category.slug }}" aria-expanded="false" aria-controls="trendCollapse{{ category.slug }}">
-                                    {{ category.name|upper }}
-                                </button>
-                            </h2>
-                            <div id="trendCollapse{{ category.slug }}" class="accordion-collapse collapse" aria-labelledby="trendHeading{{ category.slug }}" data-bs-parent="#trendingAccordion">
-                                <div class="accordion-body">
-                                    {% for product in category.product_set.all|slice:":5" %}
-                                    <p><a href="{% url 'product_detail' product.slug %}">{{ product.title }}</a></p>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+   .accordion-button:not(.collapsed) {
+    background-color: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none !important; /* 去掉蓝色阴影 */
+    border-color: transparent !important; /* 去掉边框颜色变化 */
+    outline: none !important; /* 移除系统默认 outline */
+  }
+</style>
+
 {% endblock %}

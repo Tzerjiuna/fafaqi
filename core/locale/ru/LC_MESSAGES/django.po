@@ -1,0 +1,704 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-19 15:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: core/models.py:7
+msgid "分类名称"
+msgstr ""
+
+#: core/models.py:8 core/models.py:28 core/models.py:51
+msgid "URL别名"
+msgstr ""
+
+#: core/models.py:19 core/models.py:20 core/models.py:60
+msgid "分类"
+msgstr ""
+
+#: core/models.py:24
+msgid "品牌名称"
+msgstr ""
+
+#: core/models.py:33
+msgid "品牌LOGO"
+msgstr ""
+
+#: core/models.py:46 core/models.py:47 core/models.py:55
+msgid "品牌"
+msgstr ""
+
+#: core/models.py:50
+msgid "商品名称"
+msgstr ""
+
+#: core/models.py:52
+msgid "商品描述"
+msgstr ""
+
+#: core/models.py:62
+msgid "原价"
+msgstr ""
+
+#: core/models.py:64
+msgid "折扣价"
+msgstr ""
+
+#: core/models.py:70
+msgid "主图"
+msgstr ""
+
+#: core/models.py:71
+msgid "有库存"
+msgstr ""
+
+#: core/models.py:87 core/models.py:88 core/models.py:105 core/models.py:257
+#: core/models.py:289
+msgid "商品"
+msgstr ""
+
+#: core/models.py:110 core/models.py:118 core/models.py:119
+msgid "商品图片"
+msgstr ""
+
+#: core/models.py:124
+msgid "用户"
+msgstr ""
+
+#: core/models.py:128
+msgid "手机号"
+msgstr ""
+
+#: core/models.py:132
+msgid "地址"
+msgstr ""
+
+#: core/models.py:135
+msgid "姓名"
+msgstr ""
+
+#: core/models.py:138
+msgid "银行账号"
+msgstr ""
+
+#: core/models.py:144
+msgid "银行名称"
+msgstr ""
+
+#: core/models.py:154 core/models.py:155 core/models.py:178 core/models.py:284
+msgid "客户"
+msgstr ""
+
+#: core/models.py:159
+msgid "待处理"
+msgstr ""
+
+#: core/models.py:160
+msgid "处理中"
+msgstr ""
+
+#: core/models.py:161
+msgid "已发货"
+msgstr ""
+
+#: core/models.py:162
+msgid "已送达"
+msgstr ""
+
+#: core/models.py:166
+msgid "货到付款"
+msgstr ""
+
+#: core/models.py:167
+msgid "在线支付"
+msgstr ""
+
+#: core/models.py:171
+msgid "待支付"
+msgstr ""
+
+#: core/models.py:172
+msgid "已支付"
+msgstr ""
+
+#: core/models.py:173
+msgid "支付失败"
+msgstr ""
+
+#: core/models.py:182
+msgid "订单已完成"
+msgstr ""
+
+#: core/models.py:186
+msgid "总金额"
+msgstr ""
+
+#: core/models.py:192
+msgid "订单状态"
+msgstr ""
+
+#: core/models.py:198
+msgid "支付方式"
+msgstr ""
+
+#: core/models.py:204
+msgid "运费"
+msgstr ""
+
+#: core/models.py:210
+msgid "配送距离（公里）"
+msgstr ""
+
+#: core/models.py:214
+msgid "支付状态"
+msgstr ""
+
+#: core/models.py:220
+msgid "创建时间"
+msgstr ""
+
+#: core/models.py:225 core/models.py:226 core/models.py:252 core/models.py:309
+msgid "订单"
+msgstr ""
+
+#: core/models.py:262
+msgid "数量"
+msgstr ""
+
+#: core/models.py:266
+msgid "下单时价格"
+msgstr ""
+
+#: core/models.py:293
+msgid "加入时间"
+msgstr ""
+
+#: core/models.py:298 core/models.py:299
+msgid "收藏"
+msgstr ""
+
+#: core/models.py:315
+msgid "发送人"
+msgstr ""
+
+#: core/models.py:318
+msgid "消息内容"
+msgstr ""
+
+#: core/models.py:319
+msgid "发送时间"
+msgstr ""
+
+#: core/models.py:324 core/models.py:325
+msgid "订单留言"
+msgstr ""
+
+#: core/templates/auth.html:9
+msgid "Sign In or Register"
+msgstr ""
+
+#: core/templates/auth.html:19
+msgid "SIGN IN"
+msgstr ""
+
+#: core/templates/auth.html:20
+msgid "I'M NEW HERE"
+msgstr ""
+
+#: core/templates/auth.html:35 core/templates/auth.html:67
+msgid "Email address"
+msgstr ""
+
+#: core/templates/auth.html:39 core/templates/auth.html:71
+msgid "Password"
+msgstr ""
+
+#: core/templates/auth.html:43
+msgid "Keep me signed in."
+msgstr ""
+
+#: core/templates/auth.html:46 core/templates/navbar.html:85
+msgid "Sign In"
+msgstr ""
+
+#: core/templates/auth.html:63
+msgid "Name"
+msgstr ""
+
+#: core/templates/auth.html:64
+msgid "Enter username"
+msgstr ""
+
+#: core/templates/auth.html:68
+msgid "Enter email"
+msgstr ""
+
+#: core/templates/auth.html:72
+msgid "Enter password"
+msgstr ""
+
+#: core/templates/auth.html:75
+msgid "Confirm Password"
+msgstr ""
+
+#: core/templates/auth.html:76
+msgid "Confirm password"
+msgstr ""
+
+#: core/templates/auth.html:79
+msgid "By registering, you agree with our"
+msgstr ""
+
+#: core/templates/auth.html:80
+msgid "and"
+msgstr ""
+
+#: core/templates/auth.html:84 core/templates/navbar.html:86
+msgid "Register"
+msgstr ""
+
+#: core/templates/base.html:22
+msgid "Contact Us"
+msgstr ""
+
+#: core/templates/base.html:26
+msgid "Available 24/7"
+msgstr ""
+
+#: core/templates/base.html:32
+msgid "FAQs"
+msgstr ""
+
+#: core/templates/base.html:34
+msgid "Q: How do I track my order?"
+msgstr ""
+
+#: core/templates/base.html:35
+msgid "A: You can track your order in 'My Account' section."
+msgstr ""
+
+#: core/templates/base.html:36
+msgid "Q: What's your return policy?"
+msgstr ""
+
+#: core/templates/base.html:37
+msgid "A: We accept returns within 14 days of delivery."
+msgstr ""
+
+#: core/templates/base.html:43
+msgid "Returns & Exchanges"
+msgstr ""
+
+#: core/templates/base.html:45
+msgid "Return Process:"
+msgstr ""
+
+#: core/templates/base.html:47
+msgid "Login to your account"
+msgstr ""
+
+#: core/templates/base.html:48
+msgid "Select the order to return"
+msgstr ""
+
+#: core/templates/base.html:49
+msgid "Print the return label"
+msgstr ""
+
+#: core/templates/base.html:50
+msgid "Ship the package back"
+msgstr ""
+
+#: core/templates/base.html:52
+msgid "Refunds are processed within 5 business days."
+msgstr ""
+
+#: core/templates/base.html:58
+msgid "Our Story"
+msgstr ""
+
+#: core/templates/base.html:60
+msgid "Founded in 2007, FARFETCH is the global platform for luxury fashion."
+msgstr ""
+
+#: core/templates/base.html:61
+msgid ""
+"We connect customers in over 190 countries with items from more than 1,300 "
+"brands and boutiques."
+msgstr ""
+
+#: core/templates/base.html:67
+msgid "Sustainability"
+msgstr ""
+
+#: core/templates/base.html:69
+msgid "Our sustainability commitments:"
+msgstr ""
+
+#: core/templates/base.html:71
+msgid "Carbon neutral by 2025"
+msgstr ""
+
+#: core/templates/base.html:72
+#, python-format
+msgid "100%% sustainable packaging"
+msgstr ""
+
+#: core/templates/base.html:73
+msgid "Ethical sourcing policy"
+msgstr ""
+
+#: core/templates/base.html:81
+msgid "United States"
+msgstr ""
+
+#: core/templates/base.html:82
+msgid "United Kingdom"
+msgstr ""
+
+#: core/templates/base.html:83
+msgid "France"
+msgstr ""
+
+#: core/templates/base.html:84
+msgid "Germany"
+msgstr ""
+
+#: core/templates/base.html:85
+msgid "Spain"
+msgstr ""
+
+#: core/templates/brands.html:7 core/templates/navbar.html:69
+msgid "Brands"
+msgstr ""
+
+#: core/templates/brands.html:13
+msgid "Our Brands"
+msgstr ""
+
+#: core/templates/cart.html:7
+msgid "Your Cart"
+msgstr ""
+
+#: core/templates/cart.html:17
+msgid "Price"
+msgstr ""
+
+#: core/templates/cart.html:18
+msgid "Quantity"
+msgstr ""
+
+#: core/templates/cart.html:19 core/templates/cart.html:32
+#: core/templates/checkout.html:83
+msgid "Total"
+msgstr ""
+
+#: core/templates/cart.html:23
+msgid "Remove"
+msgstr ""
+
+#: core/templates/cart.html:33
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: core/templates/cart.html:36
+msgid "Your cart is empty."
+msgstr ""
+
+#: core/templates/cart.html:37 core/templates/wishlist.html:26
+msgid "Continue Shopping"
+msgstr ""
+
+#: core/templates/checkout.html:7
+msgid "Checkout"
+msgstr ""
+
+#: core/templates/checkout.html:11
+msgid "Verification Information"
+msgstr ""
+
+#: core/templates/checkout.html:17
+msgid "Full Name"
+msgstr ""
+
+#: core/templates/checkout.html:24
+msgid "Bank Account"
+msgstr ""
+
+#: core/templates/checkout.html:28
+msgid "Saved"
+msgstr ""
+
+#: core/templates/checkout.html:32
+msgid "Bank Account Number"
+msgstr ""
+
+#: core/templates/checkout.html:36
+msgid "Bank Name"
+msgstr ""
+
+#: core/templates/checkout.html:43
+msgid "Bank Branch"
+msgstr ""
+
+#: core/templates/checkout.html:49
+msgid "Contact Info"
+msgstr ""
+
+#: core/templates/checkout.html:55
+msgid "Confirmation"
+msgstr ""
+
+#: core/templates/checkout.html:59
+msgid ""
+"Once submitted, your name cannot be changed. Please confirm it's correct."
+msgstr ""
+
+#: core/templates/checkout.html:64
+msgid "Place Order"
+msgstr ""
+
+#: core/templates/checkout.html:70
+msgid "Order Summary"
+msgstr ""
+
+#: core/templates/checkout.html:79
+msgid "Delivery Charge"
+msgstr ""
+
+#: core/templates/edit_profile.html:7
+msgid "Edit Profile"
+msgstr ""
+
+#: core/templates/edit_profile.html:11
+msgid "Phone"
+msgstr ""
+
+#: core/templates/edit_profile.html:16
+msgid "Address"
+msgstr ""
+
+#: core/templates/edit_profile.html:19
+msgid "Save Changes"
+msgstr ""
+
+#: core/templates/index.html:8
+msgid "Discover Modern Luxury"
+msgstr ""
+
+#: core/templates/index.html:9
+msgid "Shop the latest trends from top brands worldwide."
+msgstr ""
+
+#: core/templates/index.html:15
+msgid "Choose a Department"
+msgstr ""
+
+#: core/templates/index.html:22 core/templates/navbar.html:58
+msgid "Womenswear"
+msgstr ""
+
+#: core/templates/index.html:24 core/templates/index.html:36
+msgid "Shop Now"
+msgstr ""
+
+#: core/templates/index.html:34 core/templates/navbar.html:61
+msgid "Menswear"
+msgstr ""
+
+#: core/templates/index.html:48
+msgid "Trending Now"
+msgstr ""
+
+#: core/templates/navbar.html:67
+msgid "Sale"
+msgstr ""
+
+#: core/templates/navbar.html:68
+msgid "New In"
+msgstr ""
+
+#: core/templates/navbar.html:70
+msgid "Clothing"
+msgstr ""
+
+#: core/templates/navbar.html:71
+msgid "Bags"
+msgstr ""
+
+#: core/templates/navbar.html:72
+msgid "Accessories"
+msgstr ""
+
+#: core/templates/navbar.html:78
+msgid "My Account"
+msgstr ""
+
+#: core/templates/navbar.html:82
+msgid "Logout"
+msgstr ""
+
+#: core/templates/order_chat.html:2 core/templates/order_chat.html:6
+msgid "Order Chat - Order"
+msgstr ""
+
+#: core/templates/order_chat.html:31
+msgid "No messages yet."
+msgstr ""
+
+#: core/templates/order_chat.html:38
+msgid "Type your message..."
+msgstr ""
+
+#: core/templates/order_chat.html:39
+msgid "Send"
+msgstr ""
+
+#: core/templates/order_chat.html:44
+msgid "Back to Cart"
+msgstr ""
+
+#: core/templates/product_detail.html:13
+msgid "Gallery Image"
+msgstr ""
+
+#: core/templates/product_detail.html:19
+msgid "by"
+msgstr ""
+
+#: core/templates/product_detail.html:29
+msgid "In Stock:"
+msgstr ""
+
+#: core/templates/product_detail.html:29
+msgid "Yes"
+msgstr ""
+
+#: core/templates/product_detail.html:29
+msgid "No"
+msgstr ""
+
+#: core/templates/product_detail.html:33
+msgid "Quantity:"
+msgstr ""
+
+#: core/templates/product_detail.html:36
+msgid "Add to Cart"
+msgstr ""
+
+#: core/templates/product_list.html:8
+msgid "Category:"
+msgstr ""
+
+#: core/templates/product_list.html:26
+msgid "View Details"
+msgstr ""
+
+#: core/templates/product_list.html:33
+msgid "No products available."
+msgstr ""
+
+#: core/templates/profile.html:2
+msgid "Your Profile - FARFETCH"
+msgstr ""
+
+#: core/templates/profile.html:7
+msgid "Your Profile"
+msgstr ""
+
+#: core/templates/profile.html:11
+msgid "Full name:"
+msgstr ""
+
+#: core/templates/profile.html:12
+msgid "Phone:"
+msgstr ""
+
+#: core/templates/profile.html:16
+msgid "Bank Account:"
+msgstr ""
+
+#: core/templates/profile.html:17
+msgid "Bank Name:"
+msgstr ""
+
+#: core/templates/profile.html:18
+msgid "Bank Branch:"
+msgstr ""
+
+#: core/templates/profile.html:19
+msgid "Edit Bank Info"
+msgstr ""
+
+#: core/templates/profile.html:21
+msgid "Shop now"
+msgstr ""
+
+#: core/templates/profile.html:24
+msgid "Please"
+msgstr ""
+
+#: core/templates/profile.html:24
+msgid "log in"
+msgstr ""
+
+#: core/templates/profile.html:24
+msgid "to view your profile."
+msgstr ""
+
+#: core/templates/wishlist.html:2
+msgid "Your Wishlist - FARFETCH"
+msgstr ""
+
+#: core/templates/wishlist.html:7
+msgid "Your Wishlist"
+msgstr ""
+
+#: core/templates/wishlist.html:18
+msgid "View"
+msgstr ""
+
+#: core/templates/wishlist.html:25
+msgid "Your wishlist is empty."
+msgstr ""
+
+#: core/views.py:42
+msgid "邮箱或密码错误"
+msgstr ""
+
+#: core/views.py:57
+msgid "两次输入的密码不一致"
+msgstr ""
+
+#: core/views.py:61
+msgid "用户名已被使用。"
+msgstr ""
+
+#: core/views.py:65
+msgid "邮箱已被注册。"
+msgstr ""
+
+#: core/views.py:126
+msgid "该商品已售罄。"
+msgstr ""
+
+#: core/views.py:143
+#, python-format
+msgid "%(product)s 已加入购物车！"
+msgstr ""

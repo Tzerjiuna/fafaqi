@@ -1,40 +1,43 @@
 {% extends 'base.html' %}
 {% block title %}{{ product.title }} - FARFETCH{% endblock %}
 {% block content %}
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ product.image.url }}" class="img-fluid mb-3" alt="{{ product.title }}">
-                    <div class="d-flex flex-wrap gap-2">
-                        {% for image in product.images.all %}
-                        <img src="{{ image.image.url }}" class="img-thumbnail" alt="Gallery Image" style="max-width: 100px;">
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h1>{{ product.title }}</h1>
-                    <p class="text-muted">by {{ product.brand.name }}</p>
-                    <p class="fw-bold fs-4">
-                        {% if product.discount_price %}
-                            <span class="text-decoration-line-through">${{ product.price }}</span>
-                            ${{ product.discount_price }}
-                        {% else %}
-                            ${{ product.price }}
-                        {% endif %}
-                    </p>
-                    <p>{{ product.description }}</p>
-                    <p><strong>In Stock:</strong> {% if product.in_stock %}Yes{% else %}No{% endif %}</p>
-                    <form method="POST" action="{% url 'add_to_cart' product.slug %}">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="quantity" class="form-label">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control w-25 d-inline-block">
-                        </div>
-                        <button type="submit" class="btn btn-dark btn-lg" {% if not product.in_stock %}disabled{% endif %}>Add to Cart</button>
-                    </form>
+{% load i18n %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ product.image.url }}" class="img-fluid mb-3" alt="{{ product.title }}">
+                <div class="d-flex flex-wrap gap-2">
+                    {% for image in product.images.all %}
+                    <img src="{{ image.image.url }}" class="img-thumbnail" alt="{% trans 'Gallery Image' %}" style="max-width: 100px;">
+                    {% endfor %}
                 </div>
             </div>
+            <div class="col-md-6">
+                <h1>{{ product.title }}</h1>
+                <p class="text-muted">{% trans 'by' %} {{ product.brand.name }}</p>
+                <p class="fw-bold fs-4">
+                    {% if product.discount_price %}
+                        <span class="text-decoration-line-through">${{ product.price }}</span>
+                        ${{ product.discount_price }}
+                    {% else %}
+                        ${{ product.price }}
+                    {% endif %}
+                </p>
+                <p>{{ product.description }}</p>
+                <p><strong>{% trans 'In Stock:' %}</strong> {% if product.in_stock %}{% trans 'Yes' %}{% else %}{% trans 'No' %}{% endif %}</p>
+                <form method="POST" action="{% url 'add_to_cart' product.slug %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">{% trans 'Quantity:' %}</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control w-25 d-inline-block">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-lg" {% if not product.in_stock %}disabled{% endif %}>{% trans 'Add to Cart' %}</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 {% endblock %}

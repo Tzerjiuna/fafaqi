@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
-{% block title %}Your Profile - FARFETCH{% endblock %}
+{% block title %}{% trans "Your Profile - FARFETCH" %}{% endblock %}
 {% block content %}
-    <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Your Profile</h2>
-            {% if user.is_authenticated %}
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <p><strong>Username:</strong> {{ user.username }}</p>
-                    <p><strong>Phone:</strong> {{ customer.phone }}</p>
-                    <p><strong>Address:</strong> {{ customer.address }}</p>
-                    <a href="{% url 'edit_profile' %}" class="btn btn-outline-dark">Edit Profile</a>
-                </div>
+{% load i18n %}
+<section class="py-5">
+    <div class="container">
+        <h2 class="mb-4">{% trans "Your Profile" %}</h2>
+        {% if user.is_authenticated %}
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <p><strong>{% trans "Full name:" %}</strong> {{ customer.name|default_if_none:'' }}</p>
+                <p><strong>{% trans "Phone:" %}</strong> {{ customer.phone|default_if_none:'' }}</p>
             </div>
-            {% else %}
-            <p>Please <a href="{% url 'login' %}">log in</a> to view your profile.</p>
-            {% endif %}
+
+            <div class="card-body border-top">
+                <p><strong>{% trans "Bank Account:" %}</strong> {{ customer.bank_account|default_if_none:'' }}</p>
+                <p><strong>{% trans "Bank Name:" %}</strong> {{ customer.bank_name|default_if_none:'' }}</p>
+                <p><strong>{% trans "Bank Branch:" %}</strong> {{ customer.address|default_if_none:'' }}</p>
+                <a href="{% url 'edit_profile' %}" class="btn btn-outline-dark">{% trans "Edit Bank Info" %}</a>
+            </div>
+            <a href="{% url 'home' %}" class="btn btn-outline-dark">{% trans "Shop now" %}</a>
         </div>
-    </section>
+        {% else %}
+        <p>{% trans "Please" %} <a href="{% url 'login' %}">{% trans "log in" %}</a> {% trans "to view your profile." %}</p>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

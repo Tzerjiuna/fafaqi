@@ -1,45 +1,41 @@
 {% extends 'base.html' %}
-{% block title %}Your Cart - FARFETCH{% endblock %}
+{% block title %}{{ "Your Cart" | trans }} - FARFETCH{% endblock %}
+{% load i18n %}
 {% block content %}
-    <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Your Cart</h2>
-            {% if order.orderitem_set.exists %}
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in order.orderitem_set.all %}
-                    <tr>
-                        <td>{{ item.product.title }}</td>
-                        <td>${{ item.product.price }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>${{ item.get_total|floatformat:2 }}</td> <!-- Use get_total here -->
-                        <td>
-                            <form method="POST" action="{% url 'remove_from_cart' item.id %}">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                            </form>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <div class="text-end">
-                <h4>Total: ${{ order_total }}</h4>
-                <a href="{% url 'checkout' %}" class="btn btn-dark">Proceed to Checkout</a>
+<section class="py-5">
+    <div class="container">
+        <h2 class="mb-4">{% trans "Your Cart" %}</h2>
+
+        {% if order.orderitem_set.exists %}
+        <div class="row g-4">
+            {% for item in order.orderitem_set.all %}
+            <div class="col-12">
+                <div class="card shadow-sm p-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="mb-2">{{ item.product.title }}</h5>
+                            <p class="mb-1">{% trans "Price" %}: <strong>${{ item.product.price }}</strong></p>
+                            <p class="mb-1">{% trans "Quantity" %}: {{ item.quantity }}</p>
+                            <p class="mb-2">{% trans "Total" %}: <strong>${{ item.get_total|floatformat:2 }}</strong></p>
+                        </div>
+                        <form method="POST" action="{% url 'remove_from_cart' item.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">{% trans "Remove" %}</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            {% else %}
-            <p>Your cart is empty.</p>
-            <a href="{% url 'home' %}" class="btn btn-outline-dark">Continue Shopping</a>
-            {% endif %}
+            {% endfor %}
         </div>
-    </section>
+
+        <div class="text-end mt-4">
+            <h4>{% trans "Total" %}: ${{ order_total }}</h4>
+            <a href="{% url 'checkout' %}" class="btn btn-dark">{% trans "Proceed to Checkout" %}</a>
+        </div>
+        {% else %}
+        <p>{% trans "Your cart is empty." %}</p>
+        <a href="{% url 'home' %}" class="btn btn-outline-dark">{% trans "Continue Shopping" %}</a>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

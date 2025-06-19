@@ -68,8 +68,8 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
-- Access the site at `http://127.0.0.1:8000/`.
-- Access the admin panel at `http://127.0.0.1:8000/admin/`.
+- Access the site at `http://127.0.0.1:9003/`.
+- Access the admin panel at `http://127.0.0.1:9003/admin/`.
 
 ## Project Structure
 ```

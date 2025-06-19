@@ -1,17 +1,22 @@
+ <!-- 确保 i18n 标签库已加载 -->
+
 {% extends 'base.html' %}
-{% block title %}Brands - FARFETCH{% endblock %}
+{% load i18n %} 
+
+{% block title %}
+    {% trans "Brands" %} - FARFETCH
+{% endblock %}
+
 {% block content %}
     <section class="py-5">
         <div class="container">
-            <h2 class="mb-4">Our Brands</h2>
+            <h2 class="mb-4">{% trans "Our Brands" %}</h2>
             <div class="row g-4">
                 {% for brand in brands %}
                 <div class="col-md-3">
                     <div class="card h-100 border-0 shadow-sm text-center">
-                        <img src="{{ brand.logo.url }}" class="card-img-top" alt="{{ brand.name }}" style="max-height: 150px; object-fit: contain;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ brand.name }}</h5>
-                            <a href="{% url 'brand_detail' brand.slug %}" class="btn btn-outline-dark">Shop Now</a>
+                            <a href="{% url 'brand_detail' brand.slug %}" class="btn btn-link text-dark">{{ brand.name }}</a>
                         </div>
                     </div>
                 </div>

@@ -25,4 +25,11 @@ urlpatterns = [
     path('auth/', views.CustomLoginView.as_view(), name='login'),
     path('auth/register/', views.register, name='register'),  # Separate path for clarity
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
+    path('order/<int:order_id>/chat/', views.order_chat, name='order_chat'),
+
 ]
+
+urlpatterns += i18n_patterns(
+    path('set-language/', views.set_language, name='set_language'),  # This is for language switching
+    # You can add other i18n specific URL patterns here if needed
+)

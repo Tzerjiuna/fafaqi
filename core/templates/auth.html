@@ -1,12 +1,13 @@
+{% load i18n %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In or Register - FARFETCH</title>
+    <title>{% block title %}{% trans "Sign In or Register" %} - FARFETCH{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
 </head>
 <body>
@@ -15,8 +16,8 @@
     </header>
     <div class="tab-form">
         <div class="tab-header">
-            <div class="{% if not signup_active %}active{% endif %}">SIGN IN</div>
-            <div class="{% if signup_active %}active{% endif %}">I'M NEW HERE</div>
+            <div class="{% if not signup_active %}active{% endif %}">{% trans "SIGN IN" %}</div>
+            <div class="{% if signup_active %}active{% endif %}">{% trans "I'M NEW HERE" %}</div>
         </div>
         <div class="tab-body">
             <!-- Login Form -->
@@ -31,18 +32,18 @@
                 <form method="POST" action="{% url 'login' %}">
                     {% csrf_token %}
                     <div class="form-input">
-                        <label for="username">Email address</label>
+                        <label for="username">{% trans "Email address" %}</label>
                         <input id="username" name="username" type="text" required>
                     </div>
                     <div class="form-input">
-                        <label for="password">Password</label>
+                        <label for="password">{% trans "Password" %}</label>
                         <input id="password" name="password" type="password" required>
                     </div>
                     <p style="font-size: 14px;">
-                        <input type="checkbox" name="remember" id="remember"> Keep me signed in.
+                        <input type="checkbox" name="remember" id="remember"> {% trans "Keep me signed in." %}
                     </p>
                     <div class="form-input">
-                        <button type="submit" id="login">Sign In</button>
+                        <button type="submit" id="login">{% trans "Sign In" %}</button>
                     </div>
                     <input type="hidden" name="next" value="{{ next }}">
                 </form>
@@ -59,28 +60,28 @@
                 <form method="POST" action="{% url 'register' %}">
                     {% csrf_token %}
                     <div class="form-input">
-                        <label for="username">Name</label>
-                        <input id="username" name="username" type="text" placeholder="Enter username" required>
+                        <label for="username">{% trans "Name" %}</label>
+                        <input id="username" name="username" type="text" placeholder="{% trans 'Enter username' %}" required>
                     </div>
                     <div class="form-input">
-                        <label for="email">Email address</label>
-                        <input id="email" name="email" type="email" placeholder="Enter email" required>
+                        <label for="email">{% trans "Email address" %}</label>
+                        <input id="email" name="email" type="email" placeholder="{% trans 'Enter email' %}" required>
                     </div>
                     <div class="form-input">
-                        <label for="password1">Password</label>
-                        <input id="password1" name="password1" type="password" placeholder="Enter password" required>
+                        <label for="password1">{% trans "Password" %}</label>
+                        <input id="password1" name="password1" type="password" placeholder="{% trans 'Enter password' %}" required>
                     </div>
                     <div class="form-input">
-                        <label for="password2">Confirm Password</label>
-                        <input id="password2" name="password2" type="password" placeholder="Confirm password" required>
+                        <label for="password2">{% trans "Confirm Password" %}</label>
+                        <input id="password2" name="password2" type="password" placeholder="{% trans 'Confirm password' %}" required>
                     </div>
                     <p style="font-size: 14px;">
-                        By registering, you agree with our 
-                        <a href="#">Terms & Conditions</a> and 
+                        {% trans "By registering, you agree with our" %}
+                        <a href="#">Terms & Conditions</a> {% trans "and" %}
                         <a href="#">Privacy and Cookie Policy</a>.
                     </p>
                     <div class="form-input">
-                        <button type="submit" id="signup">Register</button>
+                        <button type="submit" id="signup">{% trans "Register" %}</button>
                     </div>
                 </form>
             </div>

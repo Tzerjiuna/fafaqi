@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}Edit Profile - FARFETCH{% endblock %}
 {% block content %}
-    <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Edit Profile</h2>
-            <form method="POST" action="{% url 'edit_profile' %}">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" value="{{ customer.phone }}" required>
-                </div>
-                <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
-                    <textarea class="form-control" id="address" name="address" rows="3" required>{{ customer.address }}</textarea>
-                </div>
-                <button type="submit" class="btn btn-dark">Save Changes</button>
-            </form>
-        </div>
-    </section>
+{% load i18n %}
+<section class="py-5">
+    <div class="container">
+        <h2 class="mb-4">{% trans "Edit Profile" %}</h2>
+        <form method="POST" action="{% url 'edit_profile' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="phone" class="form-label">{% trans "Phone" %}</label>
+                <input type="text" class="form-control" id="phone" name="phone"
+                    value="{{ customer.phone|default_if_none:'' }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">{% trans "Address" %}</label>
+                <textarea class="form-control" id="address" name="address" rows="3" required>{{ customer.address|default_if_none:'' }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">{% trans "Save Changes" %}</button>
+        </form>
+    </div>
+</section>
 {% endblock %}

@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "{editor}: Editing failed"
+msgstr "{editor}：编辑失败"
+
+msgid "Aborted!"
+msgstr "已中止！"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Missing command."
+msgstr "缺少命令。"
+
+msgid "No such command {name!r}."
+msgstr "没有该命令 {name!r}。"
+
+msgid "Value must be an iterable."
+msgstr "值必须是可迭代对象。"
+
+msgid "Show this message and exit."
+msgstr "显示此信息并退出。"
+
+msgid "Error: {message}"
+msgstr "错误：{message}"
+
+msgid "Invalid value: {message}"
+msgstr "无效的值：{message}"
+
+msgid "Missing argument"
+msgstr "缺少参数"
+
+msgid "Missing parameter: {param_name}"
+msgstr "缺少参数：{param_name}"
+
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+"从下列选项中选择：\n"
+"\t{choices}"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Image"
+msgstr "图片"
+
+msgid "Enter a valid email address."
+msgstr "请输入有效的电子邮件地址。"
+
+msgid "Enter a valid date."
+msgstr "请输入有效的日期。"
+
+msgid "Commands"
+msgstr "命令"
+
+msgid "Show the version and exit."
+msgstr "显示版本并退出。"
+
+msgid "Missing option"
+msgstr "缺少选项"
+
+msgid "Missing {param_type}"
+msgstr "缺少 {param_type}"
+
+msgid "No such option: {name}"
+msgstr "没有该选项：{name}"
+
+msgid "Repeat for confirmation"
+msgstr "请重复以确认"
+
+msgid "Error: The value you entered was invalid."
+msgstr "错误：你输入的值无效。"
+
+msgid "Error: The two entered values do not match."
+msgstr "错误：两次输入的值不一致。"
+
+msgid "Enter a valid domain name."
+msgstr "请输入有效的域名。"
+
+msgid "Enter a valid URL."
+msgstr "请输入有效的网址。"
+
+msgid "Enter a valid integer."
+msgstr "请输入有效的整数。"
+
+msgid "Enter only digits separated by commas."
+msgstr "只允许输入用逗号分隔的数字。"
+
+msgid "This field is required."
+msgstr "该字段为必填项。"
+
+msgid "Enter a whole number."
+msgstr "请输入整数。"
+
+msgid "Enter a valid time."
+msgstr "请输入有效的时间。"
+
+msgid "Enter a valid date/time."
+msgstr "请输入有效的日期/时间。"
+
+msgid "Enter a valid duration."
+msgstr "请输入有效的时间段。"
+
+msgid "No file was submitted."
+msgstr "未提交任何文件。"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Change"
+msgstr "更改"
+
+msgid "Clear"
+msgstr "清除"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "Unknown"
+msgstr "未知"
+
