@@ -31,7 +31,6 @@ coverage.xml
 *.cover
 *.py,cover
 
-
 # VS Code
 .vscode/
 
@@ -40,7 +39,7 @@ coverage.xml
 Thumbs.db
 
 # Jupyter Notebook checkpoints
-.ipynb_checkpoints
+.ipynb_checkpoints/
 
 # Build artifacts
 build/
@@ -71,10 +70,8 @@ node_modules/
 
 # Logs
 logs/
-*.log
 *.out
 *.err
-# .gitignore
-.env
-.env
-.env
+
+# Custom project paths
+media/products/
